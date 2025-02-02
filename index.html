@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en Línea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="startScreen">
+        <h1>Tres en Línea</h1>
+        
+        <!-- Opción 1: Dos jugadores -->
+        <div>
+            <h3>Ingrese los nombres de los jugadores</h3>
+            <input type="text" id="player1Name" placeholder="Nombre del Jugador 1" required>
+            <input type="text" id="player2Name" placeholder="Nombre del Jugador 2" required>
+            <button onclick="startTwoPlayerGame()">Iniciar Juego</button>
+        </div>
+
+        <!-- Opción 2: Un jugador contra la IA -->
+        <div>
+            <h3>Ingrese el nombre del jugador que jugará contra la IA</h3>
+            <input type="text" id="playerName" placeholder="Nombre del Jugador" required>
+            <button onclick="startSinglePlayerGame()">Iniciar Juego con IA</button>
+        </div>
+    </div>
+
+    <div class="container" id="gameScreen" style="display:none;">
+        <h1 id="gameHeader"></h1>
+        <div class="board">
+            <div class="row">
+                <div class="cell" onclick="makeMove(0)"></div>
+                <div class="cell" onclick="makeMove(1)"></div>
+                <div class="cell" onclick="makeMove(2)"></div>
+            </div>
+            <div class="row">
+                <div class="cell" onclick="makeMove(3)"></div>
+                <div class="cell" onclick="makeMove(4)"></div>
+                <div class="cell" onclick="makeMove(5)"></div>
+            </div>
+            <div class="row">
+                <div class="cell" onclick="makeMove(6)"></div>
+                <div class="cell" onclick="makeMove(7)"></div>
+                <div class="cell" onclick="makeMove(8)"></div>
+            </div>
+        </div>
+        <button onclick="resetGame()">Reiniciar Juego</button>
+        <button onclick="goToStartMenu()">Volver al Menú</button>
+        <p id="message"></p>
+    </div>
+
+    <div id="winMessage" class="winMessage">
+        <p id="winnerText"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+        <!-- Creado por AlfredoYb -->
